@@ -5,15 +5,15 @@ using System.Threading;
 
 namespace Restaurant
 {
-    class Jeff : ICook
+    class CookMaster5000 : ICook
     {
-        public string Name { get; } = "Jeff";
+        public string Name => "Cook master 5000";
 
         public void Cook(Order order)
         {
             order.Started();
 
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             order.Completed();
         }

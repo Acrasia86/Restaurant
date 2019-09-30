@@ -10,11 +10,12 @@ namespace Restaurant
         public string Name { get; set; }
         public Queue<Order> OrderQueue { get; } = new Queue<Order>();
 
-        private Jeff Jeff { get; } = new Jeff();
+        private ICook Chef { get; }
         
-        public Restaurant(string name)
+        public Restaurant(string name, ICook chef)
         {
             Name = name;
+            Chef = chef;
         }
         
         public void RegisterOrder(Order order)
@@ -24,13 +25,14 @@ namespace Restaurant
 
         public List<Order> ProcessOrders()
         {
+            Console.WriteLine($"{Chef.Name} is processing the orders");
             List<Order> completedOrders = new List<Order>();
 
             while (OrderQueue.Any())
             {
                 Order currentOrder = OrderQueue.Dequeue();
 
-                Jeff.Cook(currentOrder);
+                Chef.Cook(currentOrder);
 
                 completedOrders.Add(currentOrder);
             }

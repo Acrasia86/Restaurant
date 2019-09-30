@@ -8,7 +8,7 @@ namespace Restaurant
     {
         static void Main(string[] args)
         {
-            Restaurant restaurant = new Restaurant("McDonalds");
+            Restaurant restaurant = new Restaurant("McDonalds", new CookMaster5000());
 
             bool shouldNotExit = true;
 
