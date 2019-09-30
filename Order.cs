@@ -6,14 +6,14 @@ namespace Restaurant
 {
     class Order
     {
-        public Order(string orders, string table)
+        public Order(string dish, string table)
         {
-            Orders = orders;
+            Dish = dish;
             Table = table;
            
         }
 
-        public string Orders { get; set; }
+        public string Dish { get; set; }
         public string Table { get; set; }
         public DateTime RegisteredAt { get; } = DateTime.Now;
         public DateTime? StartedAt { get; }

@@ -9,6 +9,7 @@ namespace Restaurant
         static void Main(string[] args)
         {
             Restaurant restaurant = new Restaurant("McDonalds");
+
             bool shouldNotExit = true;
 
             Console.Clear();
@@ -47,6 +48,18 @@ namespace Restaurant
 
                         break;
                     case 2:
+
+                        Console.WriteLine("Table        Dish        Registered at");
+                        Console.WriteLine("--------------------------------------\n\n");
+
+                        foreach (var orders in restaurant.OrderQueue)
+
+                        {
+                            Console.WriteLine($"{orders.Table} {orders.Dish} {orders.RegisteredAt}");
+                        }
+                        Console.ReadLine();
+
+                        Console.WriteLine("Press any key to continue");
 
                         break;
                     case 3:

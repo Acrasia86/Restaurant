@@ -7,7 +7,9 @@ namespace Restaurant
     class Restaurant
     {
         public string Name { get; set; }
-        private Queue<Order> orderQueue { get; } = new Queue<Order>();
+        public Queue<Order> OrderQueue { get; } = new Queue<Order>();
+
+        
         public Restaurant(string name)
         {
             Name = name;
@@ -15,7 +17,7 @@ namespace Restaurant
         
         public void RegisterOrder(Order order)
         {
-            orderQueue.Enqueue(order);
+            OrderQueue.Enqueue(order);
         }
     }
 }
