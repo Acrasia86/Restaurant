@@ -18,7 +18,7 @@ namespace Restaurant
             {
                 Console.Clear();
                 Console.WriteLine("1. Add order");
-                Console.WriteLine("2. List orders");
+                Console.WriteLine("2. List pending orders");
                 Console.WriteLine("3. Process orders");
                 Console.WriteLine("4. Exit");
 
@@ -50,7 +50,7 @@ namespace Restaurant
                     case 2:
 
                         Console.WriteLine("Table        Dish        Registered at");
-                        Console.WriteLine("--------------------------------------\n\n");
+                        Console.WriteLine("--------------------------------------\n");
 
                         foreach (var orders in restaurant.OrderQueue)
 
@@ -63,6 +63,12 @@ namespace Restaurant
 
                         break;
                     case 3:
+
+                        var completedOrders = restaurant.ProcessOrders();
+
+                        Console.WriteLine("Orders processed.");
+                        
+                        Thread.Sleep(2000);
                         
                         break;
                     case 4:
